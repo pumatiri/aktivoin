@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="id" data-page="presenter">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; img-src 'self' data:; connect-src https://script.google.com https://script.googleusercontent.com; base-uri 'none'; form-action 'none'; object-src 'none'">
+  <meta name="referrer" content="strict-origin-when-cross-origin">
+  <meta name="robots" content="noindex">
+  <title>AKTIVO — Presenter</title>
+  <meta name="description" content="Tampilkan hasil langsung kepada peserta.">
+  <meta name="theme-color" content="#0e9f8e">
+  <meta property="og:title" content="AKTIVO — Presenter">
+  <meta property="og:description" content="Tampilkan hasil langsung kepada peserta.">
+  <link rel="icon" type="image/png" href="logo.png">
+  <link rel="apple-touch-icon" href="logo.png">
+  <script src="theme.js"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,600;12..96,700;12..96,800&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap">
+  <link rel="stylesheet" href="aktivo.css">
+  <link rel="stylesheet" href="presenter.css">
+</head>
+<body>
+  <div id="gate" class="center-screen" hidden>
+    <div class="card gate-card">
+      <div class="row" style="justify-content:space-between;margin-bottom:22px">
+        <span class="brand"><img id="logo-gate" alt=""><span>AKTIVO</span><span class="brand-sub">Presenter</span></span>
+        <span id="theme-gate"></span>
+      </div>
+      <h2 style="font-size:24px;margin-bottom:4px">Tampilan presenter</h2>
+      <p class="muted small" style="margin-bottom:20px">Masuk sebagai host, atau gunakan kunci presenter sesi.</p>
+      <div id="gate-auth"></div>
+    </div>
+  </div>
+
+  <div id="pres" hidden>
+    <header class="p-top">
+      <div class="join-info glass" id="join-info" title="Tampilkan QR code (Q)">
+        <div class="mini-qr" id="mini-qr"></div>
+        <div><div class="jt">Pindai atau buka link · gunakan kode</div><div class="jc" id="join-code"></div></div>
+      </div>
+      <div class="p-session"><div class="n ellipsis" id="p-name"></div><div class="f ellipsis" id="p-fac"></div></div>
+      <div class="p-stats" id="p-stats"></div>
+    </header>
+    <div class="p-timer" id="p-timer" hidden><span class="pill" id="p-timer-pill"></span></div>
+    <main class="p-main"><section class="card p-stage" id="stage"></section></main>
+    <div class="lb-overlay" id="lb-overlay" hidden><div class="inner"><h2 id="lb-title"></h2><div id="lb-body"></div></div></div>
+    <nav class="p-bar glass" id="bar" aria-label="Kontrol presenter"></nav>
+    <div class="rx-layer" id="rx-layer"></div>
+  </div>
+
+  <div class="ak-toasts" id="ak-toasts" aria-live="polite"></div>
+
+  <script src="config.js"></script>
+  <script src="api.js"></script>
+  <script src="qr.js"></script>
+  <script src="common.js"></script>
+  <script src="presenter.js"></script>
+</body>
+</html>

@@ -1,0 +1,6 @@
+# GitHub language bar: AKTIVO is a web site, so count only the HTML pages.
+# Scripts and styles are still published normally; they are just left out of the language statistics.
+*.js  linguist-detectable=false
+*.css linguist-detectable=false
+*.gs  linguist-detectable=false
+qr.js linguist-vendored

@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="id" data-page="index">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; img-src 'self' data:; connect-src https://script.google.com https://script.googleusercontent.com; base-uri 'none'; form-action 'none'; object-src 'none'">
+  <meta name="referrer" content="strict-origin-when-cross-origin">
+  <title>AKTIVO — Kelas & rapat interaktif</title>
+  <meta name="description" content="Polling, kuis, awan kata, dan tanya jawab langsung untuk kelas dan rapat. Gabung dengan kode — tanpa aplikasi.">
+  <meta name="theme-color" content="#0e9f8e">
+  <meta property="og:title" content="AKTIVO — Kelas & rapat interaktif">
+  <meta property="og:description" content="Polling, kuis, awan kata, dan tanya jawab langsung untuk kelas dan rapat. Gabung dengan kode — tanpa aplikasi.">
+  <link rel="icon" type="image/png" href="logo.png">
+  <link rel="apple-touch-icon" href="logo.png">
+  <script src="theme.js"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,600;12..96,700;12..96,800&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap">
+  <link rel="stylesheet" href="aktivo.css">
+  <link rel="stylesheet" href="index.css">
+</head>
+<body>
+  <!-- =================== LANDING =================== -->
+  <div id="landing">
+    <header class="topbar">
+      <div class="container topbar-inner">
+        <button class="brand" type="button" data-scroll="top"><img id="logo-nav" alt=""><span>AKTIVO</span></button>
+        <nav class="nav-links">
+          <button type="button" data-scroll="features">Fitur</button>
+          <button type="button" data-scroll="how">Cara kerja</button>
+          <button type="button" data-scroll="host">Untuk host</button>
+        </nav>
+        <div class="nav-actions" id="nav-actions">
+          <span id="theme-nav"></span>
+        </div>
+      </div>
+    </header>
+
+    <section class="hero" id="sec-top">
+      <div class="container hero-grid">
+        <div>
+          <span class="eyebrow"><span class="live-dot"></span> Polling · Kuis · Tanya Jawab · Awan Kata</span>
+          <h1 class="display">Ubah setiap kelas dan rapat menjadi <span class="hl">percakapan</span>.</h1>
+          <p class="lead">Dengan AKTIVO, peserta bisa memilih, menjawab kuis, bertanya, dan berbagi ide dari ponsel masing-masing — hasilnya langsung tampil di layar Anda. Tanpa instal aplikasi, tanpa akun untuk bergabung.</p>
+
+          <div class="card join-card">
+            <label class="label" for="code-input">Gabung ke sesi</label>
+            <div class="join-row">
+              <input id="code-input" class="input input-code" inputmode="numeric" placeholder="1234 5678" maxlength="20" autocomplete="off" autocapitalize="characters" aria-label="Kode sesi">
+              <button class="btn btn-primary btn-xl" id="btn-join" type="button">Gabung</button>
+            </div>
+            <div class="field-error" id="code-error" style="margin-top:8px"></div>
+            <p class="hint" style="margin-top:6px">Kode tampil di bagian atas layar presenter. Anda juga bisa memindai QR code.</p>
+          </div>
+
+          <div class="trust" id="trust"></div>
+        </div>
+
+        <div class="hero-visual" aria-hidden="true">
+          <div class="card mock-screen">
+            <div class="mock-top"><i></i><i></i><i></i><span class="sp">Gabung dengan kode <b>4827 1950</b></span></div>
+            <div class="mock-title">Apa fokus kita berikutnya?</div>
+            <div class="mock-cols">
+              <div style="--h:62%;--c:var(--c1)"><i></i>Desain</div>
+              <div style="--h:88%;--c:var(--c2)"><i></i>Kecepatan</div>
+              <div style="--h:44%;--c:var(--c3)"><i></i>Kualitas</div>
+              <div style="--h:70%;--c:var(--c4)"><i></i>Layanan</div>
+            </div>
+          </div>
+          <div class="card mock-phone">
+            <div class="notch"></div>
+            <div class="q">Pilihanmu</div>
+            <div class="mock-opt">Desain</div>
+            <div class="mock-opt sel">Kecepatan</div>
+            <div class="mock-opt">Kualitas</div>
+            <div class="mock-send">Kirim</div>
+          </div>
+          <span class="mock-float" style="left:44%;top:-6px">&#x1F44F;</span>
+          <span class="mock-float" style="right:6%;bottom:40px;animation-delay:1s">&#x2764;&#xFE0F;</span>
+          <span class="mock-chip" style="left:38%;bottom:16px;color:var(--c2)">kreatif</span>
+          <span class="mock-chip" style="left:56%;bottom:78px;color:var(--c1);animation-delay:.8s;font-size:13px">penasaran</span>
+        </div>
+      </div>
+    </section>
+
+    <section class="block" id="sec-features">
+      <div class="container">
+        <div class="sec-head">
+          <div class="sec-kicker">Fitur</div>
+          <h2>Semua yang Anda butuhkan agar peserta tetap aktif</h2>
+          <p>Sembilan jenis slide interaktif ditambah alat bantu kelas dan rapat — semuanya berjalan di akun Google Anda sendiri.</p>
+        </div>
+        <div class="feat-grid" id="feat-types"></div>
+        <div class="sub-title"><span class="feat-ic" style="--fc:var(--c2);margin:0;width:38px;height:38px" id="tools-ic"></span>Alat bantu kelas &amp; rapat</div>
+        <div class="feat-grid" id="feat-tools"></div>
+      </div>
+    </section>
+
+    <section class="block" id="sec-how" style="padding-top:20px">
+      <div class="container">
+        <div class="sec-head">
+          <div class="sec-kicker">Cara kerja</div>
+          <h2>Siap dalam tiga menit</h2>
+          <p>Host menyusun dan mempresentasikan. Peserta cukup membuka link dan mengetik kode.</p>
+        </div>
+        <div class="how">
+          <div class="card how-card" id="how-host"></div>
+          <div class="card how-card" id="how-aud"></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="block" id="sec-host">
+      <div class="container host-grid">
+        <div class="host-copy">
+          <div class="sec-kicker">Untuk guru, dosen &amp; mentor</div>
+          <h2>Buat sesi pertama Anda hari ini</h2>
+          <p>Buat akun host gratis untuk menyusun sesi, mempresentasikannya di layar besar, dan mengunduh laporan berisi absensi serta semua jawaban.</p>
+          <div id="benefits"></div>
+        </div>
+        <div class="card auth-card" id="auth-card">
+          <h3>Selamat datang di AKTIVO</h3>
+          <p class="muted small" style="margin-bottom:18px">Masuk atau buat akun host. Peserta tidak memerlukan akun.</p>
+          <div id="auth-slot"></div>
+        </div>
+      </div>
+    </section>
+
+    <footer class="foot">
+      <div class="container foot-inner">
+        <div class="row"><img id="logo-foot" alt="" style="width:26px;height:26px;border-radius:8px"><b style="color:var(--text)">AKTIVO</b><span>· Kelas &amp; rapat interaktif</span></div>
+        <div>Data Anda tetap berada di akun Google institusi Anda.</div>
+      </div>
+    </footer>
+  </div>
+
+  <!-- =================== JOIN DETAILS =================== -->
+  <div id="join-screen" class="center-screen" hidden>
+    <div class="card join-box">
+      <span class="badge badge-primary event-tag"><span class="live-dot"></span><span id="join-code-label"></span></span>
+      <h2 id="join-event-name"></h2>
+      <p class="muted" id="join-facilitator" style="margin-bottom:20px"></p>
+      <div id="join-fields"></div>
+      <div class="field-error" id="join-error"></div>
+      <button class="btn btn-primary btn-lg btn-block" id="btn-enter" type="button" style="margin-top:6px">Masuk sesi</button>
+      <p class="hint center" id="join-hint" style="margin-top:12px"></p>
+      <div class="center"><button class="back-link" type="button" id="btn-join-back"></button></div>
+    </div>
+  </div>
+
+  <!-- =================== AUDIENCE =================== -->
+  <div id="audience" hidden>
+    <header class="topbar aud-top">
+      <div class="container topbar-inner" style="max-width:720px">
+        <img id="logo-aud" alt="" style="width:32px;height:32px;border-radius:10px">
+        <div class="aud-info">
+          <div class="n ellipsis" id="aud-session"></div>
+          <div class="f ellipsis" id="aud-facilitator"></div>
+        </div>
+        <span id="theme-aud"></span>
+        <button class="icon-btn" type="button" id="btn-leave" title="Keluar dari sesi" aria-label="Keluar dari sesi"></button>
+      </div>
+    </header>
+    <div class="aud-timer" id="aud-timer" hidden><span class="pill" id="aud-timer-pill"></span></div>
+    <main class="aud-main">
+      <nav class="aud-list" id="aud-list" hidden></nav>
+      <section class="card aud-stage" id="aud-stage"></section>
+    </main>
+    <div class="aud-react glass" id="aud-react" hidden></div>
+    <div class="rx-local" id="rx-local"></div>
+  </div>
+
+  <div class="watermark" id="watermark"></div>
+  <div class="focus-overlay" id="focus-overlay">
+    <div>
+      <div class="wait-orb" style="margin-bottom:6px" id="focus-ic"></div>
+      <h3>Tetaplah di halaman ini</h3>
+      <p class="muted">Mode fokus aktif. Setiap kali Anda meninggalkan halaman, host akan mendapat catatannya.</p>
+      <button class="btn btn-primary" type="button" style="margin-top:18px" id="btn-focus-back">Saya kembali</button>
+    </div>
+  </div>
+
+  <a class="help-fab" id="help-fab" href="#" target="_blank" rel="noopener noreferrer"></a>
+
+  <div class="ak-toasts" id="ak-toasts" aria-live="polite"></div>
+
+  <script src="config.js"></script>
+  <script src="api.js"></script>
+  <script src="qr.js"></script>
+  <script src="common.js"></script>
+  <script src="index.js"></script>
+</body>
+</html>
